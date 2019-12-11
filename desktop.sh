@@ -33,5 +33,6 @@ sudo systemctl enable fstrim.timer iptables.service systemd-timesyncd.service
 sudo usermod -aG video "$USER" # fix broken light-package
 cd && rm -fr .bash_logout .cache/* yay
 sudo pacman -Rns efibootmgr gendesk go
+sudo pacman -Sc
 
 sudo reboot
