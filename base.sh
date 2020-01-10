@@ -48,7 +48,7 @@ git clone https://github.com/astier/scripts
 chown -R usename /home/usename/projects
 cp -f dotfiles/dotfiles/mkinitcpio.conf /etc
 mkinitcpio -p linux
-sh scripts/efs.sh
+sh scripts/efistub.sh
 
 # REBOOT
 exit
