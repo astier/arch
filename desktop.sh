@@ -16,11 +16,9 @@ cd ~/projects || exit
 git clone https://git.suckless.org/sites
 git clone https://github.com/astier/dmenu
 git clone https://github.com/astier/dwm
-git clone https://github.com/astier/slock
 git clone https://github.com/astier/st
 cd dmenu && sudo make install clean
 cd ../dwm && sudo make install clean
-cd ../slock && sudo make install clean
 cd ../st && sudo make install clean
 
 # CONFIG
