@@ -11,17 +11,17 @@ git clone https://aur.archlinux.org/yay
 cd yay && makepkg -is
 yay -S dropbox
 
-# SUCKLESS
+# PROJECTS
 cd ~/projects || exit
 git clone https://git.suckless.org/sites
 git clone https://github.com/astier/dwm
 git clone https://github.com/astier/st
+cd dotfiles && sh setup.sh
 cd ../dwm && sudo make install clean
+cd ../scripts && sh setup.sh
 cd ../st && sudo make install clean
 
 # CONFIG
-cd ../dotfiles && sh setup.sh
-cd ../scripts && sh setup.sh
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 nvim +PlugInstall
 chsh -s /bin/dash
