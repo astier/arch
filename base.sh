@@ -36,16 +36,16 @@ EDITOR=nvim visudo
 # %wheel ALL=(ALL) ALL
 # Defaults passwd_timeout=0
 useradd -mG wheel username
-passwd usename
+passwd username
 passwd
 passwd -l root
 
 # BOOT
-mkdir /home/usename/projects
-cd /home/usename/projects || exit
+mkdir /home/username/projects
+cd /home/username/projects || exit
 git clone https://github.com/astier/dotfiles
 git clone https://github.com/astier/scripts
-chown -R usename /home/usename/projects
+chown -R username /home/username/projects
 cp -f dotfiles/dotfiles/mkinitcpio.conf /etc
 mkinitcpio -p linux
 sh scripts/efistub.sh
