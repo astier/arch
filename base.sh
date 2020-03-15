@@ -40,14 +40,18 @@ passwd username
 passwd
 passwd -l root
 
+# MKINITCPIO
+vi /etc/mkinitcpio.conf
+# MODULES=(ext4 vfat)
+# HOOKS=(base udev autodetect modconf block keyboard encrypt fsck)
+mkinitcpio -p linux
+
 # BOOT
 mkdir /home/username/projects
 cd /home/username/projects || exit
 git clone https://github.com/astier/dotfiles
 git clone https://github.com/astier/scripts
 chown -R username /home/username/projects
-cp -f dotfiles/dotfiles/mkinitcpio.conf /etc
-mkinitcpio -p linux
 sh scripts/efistub.sh
 
 # REBOOT
