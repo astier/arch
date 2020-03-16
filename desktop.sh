@@ -15,14 +15,14 @@ yay -S dropbox
 cd ~/projects || exit
 git clone https://github.com/astier/dwm
 git clone https://github.com/astier/st
-cd dotfiles && sh setup.sh
-cd ../dwm && sudo make install clean
+cd dwm && sudo make install clean
 cd ../scripts && sh setup.sh
 cd ../st && sudo make install clean
 
 # CONFIG
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 nvim +PlugInstall
+cd ../dotfiles && sh setup.sh
 chsh -s /bin/dash
 sudo ln -sfT dash /usr/bin/sh
 sudo systemctl enable fstrim.timer iptables.service systemd-timesyncd.service
