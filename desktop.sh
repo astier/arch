@@ -7,7 +7,7 @@ sudo systemctl enable --now iwd.service systemd-resolved.service
 sudo ln -fs /run/systemd/resolve/stub-resolv.conf /etc/resolv.conf
 
 # PROGRAMS
-sudo pacman -S alsa-utils arc-gtk-theme dash fakeroot firefox fzf gcc light make man-db python-pynvim sx sxhkd tmux ttf-dejavu xorg-server xorg-xsetroot xsel
+sudo pacman -S alsa-utils arc-gtk-theme dash fakeroot firefox fzf gcc light make man-db python-pynvim sx sxhkd tmux ttf-dejavu xorg-server xorg-xset xorg-xsetroot xsel
 git clone https://aur.archlinux.org/yay
 git clone https://github.com/astier/dwm
 git clone https://github.com/astier/st
