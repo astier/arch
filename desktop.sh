@@ -7,15 +7,15 @@ sudo systemctl enable --now iwd.service systemd-resolved.service
 sudo ln -fs /run/systemd/resolve/stub-resolv.conf /etc/resolv.conf
 
 # PROGRAMS
-sudo pacman -S alsa-utils arc-gtk-theme dash fakeroot firefox fzf gcc light make man-db python-pynvim rclone sx sxhkd tmux ttf-dejavu xorg-server xorg-xset xorg-xsetroot xsel
+sudo pacman -S reflector
+sudo reflector -p https -f32 -l16 --score 8 --sort rate --save /etc/pacman.d/mirrorlist
+sudo pacman -S alsa-utils arc-gtk-theme dash fakeroot firefox fzf gcc herbstluftwm hsetroot light make man-db noto-fonts-cjk python-pynvim rclone sx sxhkd tmux ttf-dejavu xcompmgr xorg-server xorg-xset xsel
 git clone https://aur.archlinux.org/yay-bin
-git clone https://github.com/astier/dwm
 git clone https://github.com/astier/st
-cd dwm && sudo make install clean
-cd ../scripts && sh setup.sh
+cd scripts && sh setup.sh
 cd ../st && sudo make install clean
 cd ../yay-bin && makepkg -is
-yay -S xbanish
+yay -S flat-remix xbanish
 
 # CONFIG
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
