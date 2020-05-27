@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 
 # INTERNET
-cd ~/projects || exit
+cd ~/repos || exit
 sudo cp dotfiles/dotfiles/iwd.conf /etc/iwd/main.conf
 sudo systemctl enable --now iwd.service systemd-resolved.service
 sudo ln -fs /run/systemd/resolve/stub-resolv.conf /etc/resolv.conf
@@ -27,7 +27,7 @@ sudo systemctl enable fstrim.timer iptables.service systemd-timesyncd.service
 sudo usermod -aG video "$USER" # fix broken light-package
 
 # CLEAN
-cd && rm -fr .bash_logout .cache/* projects/yay-bin
+cd && rm -fr .bash_logout .cache/* repos/yay-bin
 sudo pacman -Rns efibootmgr
 sudo pacman -Sc
 sudo reboot
