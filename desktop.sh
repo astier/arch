@@ -9,7 +9,7 @@ sudo ln -fs /run/systemd/resolve/stub-resolv.conf /etc/resolv.conf
 # PROGRAMS
 sudo pacman -S reflector
 sudo reflector -p https -f32 -l16 --score 8 --sort rate --save /etc/pacman.d/mirrorlist
-sudo pacman -S alsa-utils arc-gtk-theme dash fakeroot firefox fzf gcc herbstluftwm hsetroot light make man-db noto-fonts-cjk python-pynvim rclone sx sxhkd tmux ttf-dejavu xcompmgr xorg-server xorg-xset xsel
+sudo pacman -S alsa-utils arc-gtk-theme autorandr dash fakeroot firefox fzf gcc herbstluftwm hsetroot light make man-db noto-fonts-cjk python-pynvim rclone sx sxhkd tmux ttf-dejavu xcompmgr xorg-server xorg-xset xsel
 git clone https://aur.archlinux.org/yay-bin
 git clone https://github.com/astier/st
 cd scripts && sh setup.sh
