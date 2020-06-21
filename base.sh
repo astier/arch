@@ -42,7 +42,7 @@ passwd -l root
 
 # MKINITCPIO
 vi /etc/mkinitcpio.conf
-# MODULES=(ext4 vfat)
+# MODULES=(ext4)
 # HOOKS=(base udev autodetect modconf block keyboard encrypt fsck)
 mkinitcpio -p linux
 
