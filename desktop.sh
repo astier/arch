@@ -9,7 +9,7 @@ sudo ln -fs /run/systemd/resolve/stub-resolv.conf /etc/resolv.conf
 # PROGRAMS
 sudo pacman -S reflector
 sudo reflector -p https -f32 -l16 --score 8 --sort rate --save /etc/pacman.d/mirrorlist
-sudo pacman -S alsa-utils arc-gtk-theme autorandr dash fakeroot firefox fzf gcc herbstluftwm hsetroot make man-db noto-fonts-cjk python-pynvim rclone sx sxhkd tmux ttf-dejavu xcompmgr xorg-server xorg-xset xsel
+sudo pacman -S alsa-utils arc-gtk-theme autorandr dash fakeroot firefox fzf gcc herbstluftwm hsetroot make man-db noto-fonts-cjk python-pynvim rclone sx sxhkd tmux ttf-dejavu xcompmgr xorg-server xsel
 git clone https://aur.archlinux.org/yay-bin
 git clone https://github.com/astier/st
 cd scripts && sh setup.sh
@@ -25,6 +25,7 @@ chsh -s /bin/dash
 sudo ln -sfT dash /usr/bin/sh
 sudo systemctl enable fstrim.timer iptables.service systemd-timesyncd.service
 sudo usermod -aG video "$USER" # backlight
+sudo nvim /usr/bin/sx # exec Xorg -ardelay 200 -arinterval 20
 
 # CLEAN
 cd && rm -fr .bash_logout .cache/* repos/yay-bin
