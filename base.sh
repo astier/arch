@@ -5,8 +5,8 @@ timedatectl set-ntp 1
 
 # PARTITION
 fdisk /dev/nvme0n1 # boot +2200 EF00, root
-cryptsetup luksFormat /dev/nvme0n1p2 -d usb/key
-cryptsetup open /dev/nvme0n1p2 root -d usb/key
+cryptsetup luksFormat /dev/nvme0n1p2 -d key
+cryptsetup open /dev/nvme0n1p2 root -d key
 mkfs.vfat -F16 -n BOOT /dev/nvme0n1p1
 mkfs.ext4 -L ROOT /dev/mapper/root
 

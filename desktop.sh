@@ -31,7 +31,7 @@ sudo pacman -S \
     ttf-dejavu \
     xcompmgr \
     xorg-server \
-    xsel
+    xsel \
 
 # AUR
 git clone https://aur.archlinux.org/yay-bin
