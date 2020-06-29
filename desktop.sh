@@ -11,6 +11,7 @@ sudo pacman -S reflector
 sudo reflector -p https -f32 -l16 --score 8 --sort rate --save /etc/pacman.d/mirrorlist
 sudo pacman -S \
     alsa-utils \
+    anything-sync-daemon \
     arc-gtk-theme
     autorandr \
     dash \
@@ -47,9 +48,9 @@ nvim +PlugInstall
 cd ../dotfiles && sh setup.sh
 chsh -s /bin/dash
 sudo ln -sfT dash /usr/bin/sh
-sudo systemctl enable fstrim.timer iptables.service systemd-timesyncd.service
 sudo usermod -aG video "$USER" # backlight
 sudo nvim /usr/bin/sx # exec Xorg -ardelay 200 -arinterval 20
+sudo systemctl enable asd.service fstrim.timer iptables.service systemd-timesyncd.service
 
 # CLEAN
 cd && rm -fr .bash_logout .cache/* repos/yay-bin
