@@ -10,7 +10,6 @@ sudo ln -fs /run/systemd/resolve/stub-resolv.conf /etc/resolv.conf
 sudo pacman -S reflector
 sudo reflector -p https -f32 -l16 --score 8 --sort rate --save /etc/pacman.d/mirrorlist
 sudo pacman -S \
-    alsa-utils \
     anything-sync-daemon \
     arc-gtk-theme
     autorandr \
@@ -24,6 +23,7 @@ sudo pacman -S \
     make \
     man-db \
     noto-fonts-cjk \
+    pulsemixer \
     python-pynvim \
     rclone \
     sx \
