@@ -22,6 +22,7 @@ sudo pacman -S \
     hsetroot \
     make \
     man-db \
+    newsboat \
     noto-fonts-cjk \
     pulsemixer \
     python-pynvim \
