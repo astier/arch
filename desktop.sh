@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 
 # INTERNET
-cd ~/repos || exit
+cd ~/projects || exit
 sudo cp dotfiles/dotfiles/iwd.conf /etc/iwd/main.conf
 sudo systemctl enable --now iwd.service systemd-resolved.service
 sudo ln -fs /run/systemd/resolve/stub-resolv.conf /etc/resolv.conf
@@ -53,7 +53,7 @@ sudo nvim /usr/bin/sx # exec Xorg -ardelay 200 -arinterval 20
 sudo systemctl enable fstrim.timer iptables.service systemd-timesyncd.service
 
 # CLEAN
-cd && rm -fr .bash_logout .cache/* repos/yay-bin
+cd && rm -fr .bash_logout .cache/* projects/yay-bin
 sudo pacman -Rns efibootmgr
 sudo pacman -Sc
 sudo reboot

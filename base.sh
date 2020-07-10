@@ -47,11 +47,11 @@ vi /etc/mkinitcpio.conf
 mkinitcpio -p linux
 
 # BOOT
-mkdir /home/username/repos
-cd /home/username/repos || exit
+mkdir /home/username/projects
+cd /home/username/projects || exit
 git clone https://github.com/astier/dotfiles
 git clone https://github.com/astier/scripts
-chown -R username /home/username/repos
+chown -R username /home/username/projects
 sh scripts/efistub.sh
 
 # REBOOT
