@@ -38,7 +38,7 @@ sudo pacman -S \
 git clone https://aur.archlinux.org/yay-bin
 git clone https://github.com/astier/st
 cd scripts && sh setup.sh
-cd ../st && sudo make install clean
+cd ../st && make install clean
 cd ../yay-bin && makepkg -is
 yay -S flat-remix lux xbanish
 
