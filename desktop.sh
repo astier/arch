@@ -41,8 +41,6 @@ cd ../yay-bin && makepkg -is
 yay -S flat-remix lux neovim-remote xbanish
 
 # CONFIG
-curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-nvim +PlugInstall
 cd ../dotfiles && sh setup.sh
 chsh -s /bin/dash
 sudo ln -sfT dash /usr/bin/sh
