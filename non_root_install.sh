@@ -17,7 +17,7 @@ cd ../st && make install clean
 cd ../neovim && git checkout stable
 make CMAKE_BUILD_TYPE=Release CMAKE_INSTALL_PREFIX=$HOME/.local install
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-pip3 install --user pynvim
+pip3 install --user neovim-remote pynvim
 
 cd ../arc-theme
 ./autgen.sh --prefix=$HOME/.local

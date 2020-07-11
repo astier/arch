@@ -21,10 +21,8 @@ sudo pacman -S \
     hsetroot \
     make \
     man-db \
-    newsboat \
     noto-fonts-cjk \
     pulsemixer \
-    python-pynvim \
     rclone \
     sx \
     sxhkd \
@@ -40,7 +38,7 @@ git clone https://github.com/astier/st
 cd scripts && sh setup.sh
 cd ../st && make install clean
 cd ../yay-bin && makepkg -is
-yay -S flat-remix lux xbanish
+yay -S flat-remix lux neovim-remote xbanish
 
 # CONFIG
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
