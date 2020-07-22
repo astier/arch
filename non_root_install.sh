@@ -16,8 +16,7 @@ cd ../st && make install clean
 
 cd ../neovim && git checkout stable
 make CMAKE_BUILD_TYPE=Release CMAKE_INSTALL_PREFIX=$HOME/.local install
-pip3 install --user neovim-remote
-# sudo sed -i '/shortmess/d' /usr/lib/python3.8/site-packages/nvr/nvr.py
+pip3 install --user pynvim
 
 cd ../arc-theme
 ./autgen.sh --prefix=$HOME/.local
