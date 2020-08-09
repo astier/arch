@@ -14,7 +14,7 @@ cd dotfiles && sh setup.sh
 cd ../scripts && sh setup.sh
 cd ../st && make install clean
 
-cd ../neovim && git checkout stable
+cd ../neovim && git checkout nightly
 make CMAKE_BUILD_TYPE=Release CMAKE_INSTALL_PREFIX=$HOME/.local install
 pip3 install --user pynvim
 
