@@ -39,7 +39,10 @@ git clone https://github.com/astier/st
 cd scripts && sh setup.sh
 cd ../st && make install clean
 cd ../yay-bin && makepkg -is
-yay -S flat-remix lux xbanish
+yay -S \
+    flat-remix \
+    lux \
+    xbanish \
 
 # CONFIG
 cd ../dotfiles && sh setup.sh
