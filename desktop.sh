@@ -1,12 +1,11 @@
 #!/usr/bin/env sh
 
 # INTERNET
-cd ~/projects || exit
-sudo cp dotfiles/dotfiles/iwd.conf /etc/iwd/main.conf
+sudo cp ~/projects/dotfiles/dotfiles/iwd.conf /etc/iwd/main.conf
 sudo systemctl enable --now iwd.service systemd-resolved.service
 sudo ln -fs /run/systemd/resolve/stub-resolv.conf /etc/resolv.conf
 
-# PROGRAMS
+# PROGRAMS - OFFICIAL
 sudo pacman -S reflector
 sudo reflector -p https -f32 -l16 --score 8 --sort rate --save /etc/pacman.d/mirrorlist
 sudo pacman -S \
@@ -33,19 +32,22 @@ sudo pacman -S \
     xorg-server \
     xsel \
 
-# AUR
+# PROGRAMS - AUR
 git clone https://aur.archlinux.org/yay-bin
-git clone https://github.com/astier/st
-cd scripts && sh setup.sh
-cd ../st && make install clean
 cd ../yay-bin && makepkg -is
 yay -S \
     flat-remix \
     lux \
     xbanish \
 
+# PROGRAMS - CUSTOM
+cd ~/projects || return
+git clone https://github.com/astier/st
+cd dotfiles && sh setup.sh
+cd ../scripts && sh setup.sh
+cd ../st && make install clean
+
 # CONFIG
-cd ../dotfiles && sh setup.sh
 chsh -s /bin/dash
 sudo ln -sfT dash /usr/bin/sh
 sudo usermod -aG video "$USER" # backlight
@@ -53,7 +55,7 @@ sudo nvim /usr/bin/sx # exec Xorg -ardelay 200 -arinterval 20
 sudo systemctl enable fstrim.timer iptables.service systemd-timesyncd.service
 
 # CLEAN
-cd && rm -fr .bash_logout .cache/* projects/yay-bin
+cd && rm -fr .bash_logout .cache/* yay-bin
 sudo pacman -Rns efibootmgr
 sudo pacman -Sc
 sudo reboot
