@@ -6,8 +6,6 @@ sudo systemctl enable --now iwd.service systemd-resolved.service
 sudo ln -fs /run/systemd/resolve/stub-resolv.conf /etc/resolv.conf
 
 # PROGRAMS - OFFICIAL
-sudo pacman -S reflector
-sudo reflector -p https -f32 -l16 --score 8 --sort rate --save /etc/pacman.d/mirrorlist
 sudo pacman -S \
     arc-gtk-theme
     autorandr \
