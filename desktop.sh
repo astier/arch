@@ -20,7 +20,6 @@ sudo pacman -S \
     man-db \
     noto-fonts-cjk \
     pulsemixer \
-    python-pynvim \
     rclone \
     sx \
     sxhkd \
