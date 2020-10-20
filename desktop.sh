@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 
 # INTERNET
-sudo cp ~/projects/dotfiles/dotfiles/iwd.conf /etc/iwd/main.conf
+sudo cp ~/projects/dotfiles/iwd.conf /etc/iwd/main.conf
 sudo systemctl enable --now iwd.service systemd-resolved.service
 sudo ln -fs /run/systemd/resolve/stub-resolv.conf /etc/resolv.conf
 
