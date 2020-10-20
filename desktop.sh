@@ -15,7 +15,6 @@ sudo pacman -S \
     fzf \
     gcc \
     herbstluftwm \
-    hsetroot \
     make \
     man-db \
     noto-fonts-cjk \
@@ -25,7 +24,6 @@ sudo pacman -S \
     sxhkd \
     tmux \
     ttf-dejavu \
-    xcompmgr \
     xorg-server \
     xsel \
 
