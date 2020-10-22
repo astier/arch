@@ -7,7 +7,7 @@ sudo ln -fs /run/systemd/resolve/stub-resolv.conf /etc/resolv.conf
 
 # PROGRAMS - OFFICIAL
 sudo pacman -S \
-    arc-gtk-theme
+    arc-gtk-theme \
     autorandr \
     dash \
     fakeroot \
