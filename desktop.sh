@@ -5,37 +5,13 @@ sudo cp ~/projects/dotfiles/iwd.conf /etc/iwd/main.conf
 sudo systemctl enable --now iwd.service systemd-resolved.service
 sudo ln -fs /run/systemd/resolve/stub-resolv.conf /etc/resolv.conf
 
-# PROGRAMS - OFFICIAL
-sudo pacman -S \
-    arc-gtk-theme \
-    autorandr \
-    dash \
-    fakeroot \
-    firefox \
-    fzf \
-    gcc \
-    herbstluftwm \
-    make \
-    man-db \
-    noto-fonts-cjk \
-    pulsemixer \
-    rclone \
-    sx \
-    sxhkd \
-    tmux \
-    ttf-dejavu \
-    xorg-server \
-    xsel \
-
-# PROGRAMS - AUR
+# PROGRAMS
+sudo pacman -S arc-gtk-theme autorandr dash fakeroot firefox fzf gcc herbstluftwm make man-db noto-fonts-cjk pulsemixer rclone sx sxhkd tmux ttf-dejavu xorg-server xsel
 git clone https://aur.archlinux.org/yay-bin
 cd ../yay-bin && makepkg -is
-yay -S \
-    flat-remix \
-    lux \
-    xbanish \
+yay -S flat-remix lux xbanish
 
-# PROGRAMS - CUSTOM
+# PROJECTS
 cd ~/projects || return
 git clone https://github.com/astier/st
 cd dotfiles && sh setup.sh
