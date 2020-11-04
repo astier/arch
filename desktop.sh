@@ -6,7 +6,26 @@ sudo systemctl enable --now iwd.service systemd-resolved.service
 sudo ln -fs /run/systemd/resolve/stub-resolv.conf /etc/resolv.conf
 
 # PROGRAMS
-sudo pacman -S arc-gtk-theme dash fakeroot firefox fzf gcc herbstluftwm make man-db noto-fonts-cjk pulsemixer rclone sx sxhkd tmux ttf-dejavu xorg-server xorg-xrandr xsel
+sudo pacman -S \
+    arc-gtk-theme \
+    dash \
+    fakeroot \
+    firefox \
+    fzf \
+    gcc \
+    herbstluftwm \
+    make \
+    man-db \
+    noto-fonts-cjk \
+    pulsemixer \
+    rclone \
+    sx \
+    sxhkd \
+    tmux \
+    ttf-dejavu \
+    xorg-server \
+    xorg-xrandr \
+    xsel
 git clone https://aur.archlinux.org/yay-bin
 cd ../yay-bin && makepkg -is
 yay -S flat-remix lux xbanish
