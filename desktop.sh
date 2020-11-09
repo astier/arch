@@ -8,6 +8,7 @@ sudo ln -fs /run/systemd/resolve/stub-resolv.conf /etc/resolv.conf
 # PROGRAMS
 sudo pacman -S \
     arc-gtk-theme \
+    autorandr \
     dash \
     fakeroot \
     firefox \
@@ -24,7 +25,6 @@ sudo pacman -S \
     tmux \
     ttf-dejavu \
     xorg-server \
-    xorg-xrandr \
     xsel
 git clone https://aur.archlinux.org/paru-bin
 cd paru-bin && makepkg -is
