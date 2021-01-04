@@ -26,9 +26,9 @@ sudo pacman -S \
     xorg-server \
     xorg-xrandr \
     xsel
-git clone https://aur.archlinux.org/yay-bin
-cd ../yay-bin && makepkg -is
-yay -S flat-remix lux xbanish
+git clone https://aur.archlinux.org/paru-bin
+cd paru-bin && makepkg -is
+paru flat-remix lux xbanish
 
 # PROJECTS
 cd ~/projects || return
@@ -45,7 +45,7 @@ sudo nvim /usr/bin/sx # exec Xorg -ardelay 200 -arinterval 20
 sudo systemctl enable fstrim.timer iptables.service systemd-timesyncd.service
 
 # CLEAN
-cd && rm -fr .bash_logout .cache/* yay-bin
+cd && rm -fr .bash_logout .cache/* paru-bin
 sudo pacman -Rns efibootmgr
 sudo pacman -Sc
 sudo reboot
