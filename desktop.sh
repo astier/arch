@@ -15,9 +15,11 @@ sudo pacman -S \
     fzf \
     gcc \
     herbstluftwm \
+    hsetroot \
     make \
     man-db \
     noto-fonts-cjk \
+    picom \
     pulsemixer \
     rclone \
     sx \
@@ -28,7 +30,7 @@ sudo pacman -S \
     xsel
 git clone https://aur.archlinux.org/paru-bin
 cd paru-bin && makepkg -is
-paru flat-remix lux xbanish
+paru flat-remix lux nerd-fonts-hack xbanish
 
 # PROJECTS
 cd ~/projects || return
