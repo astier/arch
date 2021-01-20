@@ -5,7 +5,7 @@ sudo cp ~/projects/dotfiles/iwd.conf /etc/iwd/main.conf
 sudo systemctl enable --now iwd.service systemd-resolved.service
 sudo ln -fs /run/systemd/resolve/stub-resolv.conf /etc/resolv.conf
 
-# PROGRAMS
+# PROGRAMS - REPO
 sudo pacman -S \
     arc-gtk-theme \
     autorandr \
@@ -28,18 +28,20 @@ sudo pacman -S \
     ttf-dejavu \
     xorg-server \
     xsel
+
+# PROGRAMS - AUR
 git clone https://aur.archlinux.org/paru-bin
 cd paru-bin && makepkg -is
 paru flat-remix lux nerd-fonts-hack xbanish
 
-# PROJECTS
+# PROGRAMS - SRC
 cd ~/projects || return
 git clone https://github.com/astier/st
-cd dotfiles && sh setup.sh
-cd ../scripts && sh setup.sh
+cd scripts && sh setup.sh
 cd ../st && make install clean
 
 # CONFIG
+cd ../dotfiles && sh setup.sh
 chsh -s /bin/dash
 sudo ln -sfT dash /usr/bin/sh
 sudo usermod -aG video "$USER" # backlight
