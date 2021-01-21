@@ -18,7 +18,7 @@ mount -L BOOT /mnt/boot
 # INSTALL
 pacstrap /mnt base bash-completion efibootmgr git intel-ucode iwd linux linux-firmware neovim sudo
 genfstab -L /mnt >> /mnt/etc/fstab
-vi /mnt/etc/fstab # replace relatime with noatime,lazytime,commit=60
+vi /mnt/etc/fstab # replace relatime with noatime + lazytime,commit=60 for ext4
 
 # CONFIGURE
 arch-chroot /mnt
