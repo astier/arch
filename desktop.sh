@@ -1,12 +1,12 @@
 #!/usr/bin/env sh
 
 # INTERNET
-sudo cp ~/projects/dotfiles/iwd.conf /etc/iwd/main.conf
-sudo systemctl enable --now iwd.service systemd-resolved.service
-sudo ln -fs /run/systemd/resolve/stub-resolv.conf /etc/resolv.conf
+doas cp ~/projects/dotfiles/iwd.conf /etc/iwd/main.conf
+doas systemctl enable --now iwd.service systemd-resolved.service
+doas ln -fs /run/systemd/resolve/stub-resolv.conf /etc/resolv.conf
 
 # PROGRAMS - REPO
-sudo pacman -S \
+doas pacman -S \
     arc-gtk-theme \
     autorandr \
     dash \
@@ -43,13 +43,13 @@ cd ../st && make install clean
 # CONFIG
 cd ../dotfiles && sh setup.sh
 chsh -s /bin/dash
-sudo ln -sfT dash /usr/bin/sh
-sudo usermod -aG video "$USER" # backlight
-sudo nvim /usr/bin/sx # exec Xorg -ardelay 200 -arinterval 20
-sudo systemctl enable fstrim.timer iptables.service systemd-timesyncd.service
+doas ln -sfT dash /usr/bin/sh
+doas usermod -aG video "$USER" # backlight
+doas nvim /usr/bin/sx # exec Xorg -ardelay 200 -arinterval 20
+doas systemctl enable fstrim.timer iptables.service systemd-timesyncd.service
 
 # CLEAN
 cd && rm -fr .bash_logout .cache/* paru-bin
-sudo pacman -Rns efibootmgr
-sudo pacman -Sc
-sudo reboot
+doas pacman -Rns efibootmgr
+doas pacman -Sc
+doas reboot

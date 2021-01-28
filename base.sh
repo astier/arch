@@ -16,12 +16,13 @@ mkdir /mnt/boot
 mount -L BOOT /mnt/boot
 
 # INSTALL
-pacstrap /mnt base bash-completion efibootmgr git intel-ucode iwd linux linux-firmware neovim sudo
+pacstrap /mnt base bash-completion efibootmgr git intel-ucode iwd linux linux-firmware neovim opendoas
 genfstab -L /mnt >> /mnt/etc/fstab
 vi /mnt/etc/fstab # replace relatime with noatime + lazytime,commit=60 for ext4
 
 # CONFIGURE
 arch-chroot /mnt
+ln -s /usr/bin/doas /usr/bin/sudo
 chattr +i /var/log/lastlog
 setterm -cursor on > /etc/issue
 echo hostname > /etc/hostname
@@ -32,9 +33,7 @@ vi /etc/locale.gen # uncomment en_US.UTF-8 UTF-8
 locale-gen
 
 # USER
-EDITOR=nvim visudo
-# %wheel ALL=(ALL) ALL
-# Defaults passwd_timeout=0
+echo permit nopass :wheel > /etc/doas.conf
 useradd -mG wheel username
 passwd username
 passwd
