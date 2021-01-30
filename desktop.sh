@@ -26,7 +26,6 @@ doas pacman -S \
     sxhkd \
     tmux \
     ttf-dejavu \
-    xorg-server \
     xsel
 
 # PROGRAMS - AUR
