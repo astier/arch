@@ -17,7 +17,6 @@ doas pacman -S \
     herbstluftwm \
     hsetroot \
     make \
-    man-db \
     noto-fonts-cjk \
     picom \
     pulsemixer \

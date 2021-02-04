@@ -16,7 +16,7 @@ mkdir /mnt/boot
 mount -L BOOT /mnt/boot
 
 # INSTALL
-pacstrap /mnt base bash-completion efibootmgr git intel-ucode iwd linux linux-firmware neovim opendoas
+pacstrap /mnt base bash-completion efibootmgr git intel-ucode iwd linux linux-firmware man-db neovim opendoas
 genfstab -L /mnt >> /mnt/etc/fstab
 vi /mnt/etc/fstab # replace relatime with noatime + lazytime,commit=60 for ext4
 
